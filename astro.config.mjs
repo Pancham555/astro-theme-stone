@@ -5,9 +5,12 @@ import compress from 'astro-compress';
 import keystatic from '@keystatic/astro';
 import react from '@astrojs/react';
 import icon from 'astro-icon';
+import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), tailwind(), compress(), keystatic(), react(), 
     icon({   include: ["iconamoon","mdi"],})
   ],
+
+  adapter: vercel(),
 });

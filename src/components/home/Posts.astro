@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PostCard from "../shared/post-card.astro";
+import { Icon } from "astro-icon/components";
 
 const posts = await getCollection("posts");
 
@@ -26,9 +27,10 @@ const latestPosts = posts.slice(0, 3);
         aria-label="View All Posts"
       >
         <!-- Simple arrow icon -->
-        <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M23.987 12a2.4 2.4 0 0 0-.814-1.8L11.994.361a1.44 1.44 0 0 0-1.9 2.162l8.637 7.6a.25.25 0 0 1-.165.437H1.452a1.44 1.44 0 0 0 0 2.88h17.111a.251.251 0 0 1 .165.438l-8.637 7.6a1.44 1.44 0 1 0 1.9 2.161L23.172 13.8a2.4 2.4 0 0 0 .815-1.8"/></svg>
+        <!-- <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
+        </svg> -->
       </a>
     </div>
 
