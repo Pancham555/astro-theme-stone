@@ -12,5 +12,5 @@ export default defineConfig({
     icon({   include: ["iconamoon","mdi"],})
   ],
 
-  // adapter: vercel(),
+  adapter: vercel(),
 });
