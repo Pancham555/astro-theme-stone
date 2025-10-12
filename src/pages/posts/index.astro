@@ -4,17 +4,20 @@ import Layout from "../../layouts/Layout.astro";
 import PostCard from "../../components/shared/post-card.astro";
 
 const posts = await getCollection("posts");
+const sortedPosts = posts
+  .filter((post) => post.data.date) // ensure date exists
+  .sort((a, b) => Number(new Date(b.data.date)) - Number(new Date(a.data.date)));
 ---
 
 <Layout title="Posts · Tau Labs" description="All posts and stories from us.">
   <section class="py-16 sm:py-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <h1 class="text-4xl sm:text-5xl font-medium tracking-tight text-center mb-16">
         Latest Posts
       </h1>
 
-      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
+      <div class="grid gap-12 sm:grid-cols-2">
+        {sortedPosts.map((post) => (
           <PostCard post={post} />
         ))}
       </div>

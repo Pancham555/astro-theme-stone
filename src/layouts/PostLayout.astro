@@ -21,20 +21,20 @@ const dateFormatted = post.data.date
 <Layout title={post.data.title} description={post.data.description}>
   <!-- Outer Section -->
   <section class="py-16 sm:py-20">
-    <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 items-center">
       <!-- Title & Description -->
-      <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+      <h1 class="text-4xl text-center font-medium tracking-tight sm:text-5xl lg:text-6xl">
         {post.data.title}
       </h1>
 
       {post.data.description && (
-        <p class="mx-auto mt-6 max-w-2xl text-lg text-primary-950/70 dark:text-primary-200/70">
+        <p class="mx-auto mt-6 max-w-2xl text-center text-lg text-primary-950/70 dark:text-primary-200/70">
           <em>{post.data.description}</em>
         </p>
       )}
 
       {dateFormatted && (
-        <p class="mt-3 text-sm text-primary-950/60 dark:text-primary-200/60">
+        <p class="mt-3 text-sm mx-auto text-center text-primary-950/60 dark:text-primary-200/60">
           Published on {dateFormatted}
         </p>
       )}
