@@ -2,15 +2,22 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
+    // kind:"local"
     kind: 'github',
     repo:"pancham555/astro-theme-stone"
+  },
+  ui:{
+    brand:{
+      name:"Tau Labs"
+    }
   },
   collections: {
     posts: collection({
       label: 'Posts',
       slugField: 'title', // ✅ points to top-level field
       path: 'src/content/posts/*',
-      format: { contentField: 'content' },
+      entryLayout: 'content',
+      format: { contentField: 'body' },
       schema: {
         // Title (used for slug)
         title: fields.slug({
@@ -32,10 +39,10 @@ export default config({
 
         // Featured image
    image: fields.image({
-  label: 'Featured Image',
-  directory: 'public/assets/images/posts',
-  publicPath: '/assets/images/posts/',
-  validation:{isRequired:true}
+   label: 'Featured Image',
+   directory: 'public/assets/images/posts',
+   publicPath: '/assets/images/posts/',
+   validation:{isRequired:true}
 }),
 
         // Full-width writing area (MDX content)
