@@ -8,7 +8,7 @@ export default config({
   },
   ui:{
     brand:{
-      name:"Tau Labs"
+      name:"Tau Labs",
     }
   },
   collections: {
@@ -17,7 +17,7 @@ export default config({
       slugField: 'title', // ✅ points to top-level field
       path: 'src/content/posts/*',
       entryLayout: 'content',
-      format: { contentField: 'body' },
+      format: { contentField: 'content' },
       schema: {
         // Title (used for slug)
         title: fields.slug({
